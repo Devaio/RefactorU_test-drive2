@@ -40,4 +40,8 @@ describe("Filter function", function() {
 	it("should be able to keep only truthy values", function() {
 		expect( filter([0,2,"", null, undefined], function(i){ if(i != false){return i} } )).toEqual([2])
 	})
+
+	it("should filter strings beginning with 'a'", function() {
+		expect( filter( ['apple', 'banana', 'aardvark', 'car'], function(i){ if(i.charAt(0)!=='a'){return i} })).toEqual(['banana','car'])
+	})
 });
